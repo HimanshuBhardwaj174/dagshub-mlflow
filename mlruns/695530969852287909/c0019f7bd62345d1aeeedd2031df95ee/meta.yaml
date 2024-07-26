@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/himan/Downloads/dagshub/mlruns/695530969852287909/c0019f7bd62345d1aeeedd2031df95ee/artifacts
+end_time: 1722011040956
+entry_point_name: ''
+experiment_id: '695530969852287909'
+lifecycle_stage: active
+run_id: c0019f7bd62345d1aeeedd2031df95ee
+run_name: Collaboration
+run_uuid: c0019f7bd62345d1aeeedd2031df95ee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1722011033174
+status: 4
+tags: []
+user_id: himan
