@@ -7,6 +7,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import mlflow
 
+mlflow.set_tracking_uri('https://dagshub.com/HimanshuBhardwaj174/dagshub-mlflow.mlflow')
+import dagshub
+dagshub.init(repo_owner='HimanshuBhardwaj174', repo_name='dagshub-mlflow', mlflow=True)
 
 
 
@@ -18,7 +21,7 @@ random_state=42
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 mlflow.set_experiment('iris-dt')
-with mlflow.start_run(run_name='Collaboration'):
+with mlflow.start_run():
     # Initialize the RandomForestClassifier
     clf = RandomForestClassifier(n_estimators=n_estimators, random_state=random_state)
 
@@ -51,6 +54,7 @@ with mlflow.start_run(run_name='Collaboration'):
 
     mlflow.log_metric('accuracy',accuracy)
 
-    mlflow.sklearn.log_model(clf,'rf')
+    #mlflow.sklearn.log_model(clf,'rf')
     mlflow.log_artifact('conf.png')
+    mlflow.log_artifact(__file__)
 
